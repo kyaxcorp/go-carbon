@@ -2,7 +2,7 @@
 
 #### Installation
 
-##### Go version >= 1.16 (recommend)
+##### Go version >= 1.17 (recommend)
 
 ```go
 // By github
