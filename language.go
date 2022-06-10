@@ -4,7 +4,6 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 )
@@ -54,7 +53,10 @@ func (lang *Language) SetLocale(locale string) {
 		return
 	}
 	lang.locale = locale
-	fileName := lang.dir + string(os.PathSeparator) + locale + ".json"
+	//fileName := lang.dir + string(os.PathSeparator) + locale + ".json"
+	//fileName := lang.dir + filepath.FromSlash("/") + locale + ".json"
+	// embed path separator is /
+	fileName := lang.dir + "/" + locale + ".json"
 	bytes, err := fs.ReadFile(fileName)
 	if err != nil {
 		lang.Error = invalidLocaleError(fileName)
